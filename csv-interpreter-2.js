@@ -29,10 +29,8 @@ function getAsText(fileToRead) {
 function loadHandler(event) {
     var csv = event.target.result;
     processData(csv);
-
     randomizeWinner();
     displayWinner();
-
     runAgain();
 }
 
