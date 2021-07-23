@@ -16,16 +16,56 @@
 </head>
 
 <body>
-    <p id="winners-name"></p>
-    <p id="winners-information"></p>
 
-    <form id="myForm">
-        <input type="file" id="csvFileInput" onchange="handleFiles(this.files)" accept=".csv">
-    </form>
+    <div class="uk-section uk-section-xlarge uk-section-muted">
+        <div class="uk-container">
+            <div class="uk-margin-large">
+                <h1 class="uk-text-center">Random Selector</h1>
+            </div>
+            <div class="uk-grid-match uk-child-width-1-2@m" uk-grid>
+                <div>
+                    <form id="uploadCSV" class="uk-form-custom">
+                            <p class="uk-h3">Upload CSV</p>
+                        <div class="uk-flex">
+                            <div>
+                                <div uk-form-custom="target: true">
+                                    <input type="file" accept=".csv" id="csvFile" >
+                                    <input class="uk-input" type="text" placeholder="Select file" disabled>
+                                </div>
+                                <button class="uk-button uk-button-secondary">Submit</button>
+                            </div>
+                        </div>
+                        <hr />
+                    </form>
+                    <form id="addNames">
+                        <p class="uk-h3">Add Contestants</p>
+                        <p>Separate names with ','.</p>
+                        <div class="uk-flex">
+                            <div>
+                                <textarea id="names" class="uk-textarea" placeholder="John, Mary, Steve"></textarea>
+                            </div>
+                            <div class="uk-margin-left">
+                                <button class="uk-button uk-button-secondary submit-button">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div>
+                    <p class="uk-h3">Contestants</p>
+                    <p id="contestantBox"></p>
+                    <div class="uk-flex">
+                        <div><button id="pickWinner" class="uk-button uk-button-primary">Pick Winner</button></div>
+                        <div><button id="refresh" class="uk-button uk-button-secondary">Reset</button></div>
+                    </div>
+                    <p class="uk-h3">The Winner is...</p>
+                    <p class="uk-h1" id="winnerBox"></p>
+                    <p id="winnerList"></p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <button id="pickNext">Pick next winner</button>
-
-    <script type="text/javascript" src="./csv-interpreter-2.js"></script>
+    <script type="text/javascript" src="./csv-interpreter.js"></script>
 
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/css/uikit.min.css" />
