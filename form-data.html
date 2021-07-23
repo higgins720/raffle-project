@@ -19,45 +19,49 @@
 
     <div class="uk-section uk-section-xlarge uk-section-muted">
         <div class="uk-container">
-            <h1>Random Selector</h1>
-
+            <div class="uk-margin-large">
+                <h1 class="uk-text-center">Random Selector</h1>
+            </div>
             <div class="uk-grid-match uk-child-width-1-2@m" uk-grid>
                 <div>
-                    <form id="myForm" class="uk-form-custom">
+                    <form id="uploadCSV" class="uk-form-custom">
+                            <p class="uk-h3">Upload CSV</p>
                         <div class="uk-flex">
                             <div>
-                                <p class="uk-h3">Upload CSV</p>
-                            </div>
-                            <div class="uk-margin-left">
                                 <div uk-form-custom="target: true">
-                                    <input type="file">
-                                    <input class="uk-input uk-form-width-meduim" type="text" disabled>
-                                    <input type="file" id="csvFile" accept=".csv" placeholder="Select file"></input>
+                                    <input type="file" accept=".csv" id="csvFile" >
+                                    <input class="uk-input" type="text" placeholder="Select file" disabled>
                                 </div>
-                            </div>
-                            <div class="uk-margin-left">
                                 <button class="uk-button uk-button-secondary">Submit</button>
                             </div>
                         </div>
+                        <hr />
                     </form>
-
+                    <form id="addNames">
+                        <p class="uk-h3">Add Contestants</p>
+                        <p>Separate names with ','.</p>
+                        <div class="uk-flex">
+                            <div>
+                                <textarea id="names" class="uk-textarea" placeholder="John, Mary, Steve"></textarea>
+                            </div>
+                            <div class="uk-margin-left">
+                                <button class="uk-button uk-button-secondary submit-button">Submit</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
                 <div>
                     <p class="uk-h3">Contestants</p>
-                    <p id="winnersInfo"></p>
-                    <p><button class="uk-button uk-button-primary" id="pickNext">Pick Winner</button></p>
+                    <p id="contestantBox"></p>
+                    <div class="uk-flex">
+                        <div><button id="pickWinner" class="uk-button uk-button-primary">Pick Winner</button></div>
+                        <div><button id="refresh" class="uk-button uk-button-secondary">Reset</button></div>
+                    </div>
                     <p class="uk-h3">The Winner is...</p>
-
                     <p class="uk-h1" id="winnerBox"></p>
                     <p id="winnerList"></p>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="uk-section uk-section-default">
-        <div class="uk-container uk-flex uk-flex-center">
-
-
         </div>
     </div>
 
